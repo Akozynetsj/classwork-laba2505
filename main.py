@@ -1,8 +1,11 @@
-import urllib.request
-opener = urllib.request.build_opener()
-response = opener.open("https://httpbin.org/get")
-print(response.read())
-
+#1
 import requests
-response = requests.get("https://coinmarketcap.com/")
-print(response.text)
+from bs4 import BeautifulSoup
+response = requests.get("https://www.e.com/")
+
+if response.status_code == 200:
+    soup = BeautifulSoup(response.content, 'htmt.parser'
+    title = soup.find('title').text
+    print(title)
+else:
+    print('немає підключення', response.status_code)
